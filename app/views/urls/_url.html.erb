@@ -1,6 +1,6 @@
 <tr>
-  <td scope="row"><%= "http://127.0.0.1:3000/"+url.short_url %></td>
-  <td><%= link_to url.initial_url, visit_path(url.short_url), method: :post %> </td>
+  <td scope="row"><%= link_to "http://127.0.0.1:3000/"+url.short_url, visit_path(url.short_url), method: :post %></td>
+  <td><%= url.initial_url %> </td>
   <td><%= url.created_at %></td>
   <td><%= url.clicks_count %></td>
   <td><%= link_to 'INFO', info_url_path(url) %> </td>
