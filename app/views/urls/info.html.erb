@@ -1,0 +1,16 @@
+
+<div class="row">
+        <div class="col-xl-8">
+          <h1 class="bd-title mt-0">URL <%= @url.initial_url %></h1>
+          <p class="bd-lead">Total CLICKS <%= @url.clicks_count %></p>
+
+        </div>
+        <div class="col-xl-4 d-lg-flex justify-content-xl-end">
+          <%= link_to 'Back', root_path %>
+
+        </div>
+      </div>
+<div class="list-group">
+<%= render @url.clicks %>
+
+</div>

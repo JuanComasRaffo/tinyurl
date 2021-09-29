@@ -1,0 +1,43 @@
+<% if flash[:notice] %>
+  <div class="card-panel notice deep-orange"><%= flash[:notice] %></div>
+<% end %>
+<% @url.errors.full_messages.each do |msg| %>
+  <li><%= msg  %></li>
+<% end %>
+<div class="row">
+  <div class="col m12">
+    <%= form_for @url do |f| %>
+      <div class="card">
+        <div class="card-content">
+          <div class="row">
+            <div class="col m8 offset-m2 center-align">
+              <span class="card-title">Create a new short URL</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col m6 offset-m2">
+              <%= f.text_field :initial_url, class: 'validate form-control', placeholder: 'put the URL' %>
+            </div>
+            <div class="col m2">
+              <button type="submit" class="btn btn-info">Create SHORT URL</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<table class="table highlight">
+  <thead>
+    <tr>
+      <th scope="col">Short URL</th>
+      <th scope="col">Initial URL</th>
+      <th scope="col">Created</th>
+      <th scope="col">Clicks Count</th>
+      <th scope="col">Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @urls %>
+  </tbody>
+</table>
